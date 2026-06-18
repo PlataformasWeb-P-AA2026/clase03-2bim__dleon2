@@ -1,4 +1,4 @@
-"""
+credits"""
     Manejo de urls para la aplicación
     administrativo
 """
