@@ -1,0 +1,16 @@
+<h3>{{ mititulo }}</h3>
+Número de estudiantes {{ numero_estudiantes }}
+<hr>
+<br />
+
+<ul>
+
+    {% for e in estudiantes %}
+
+    <li>{{e.id}}-{{e.nombre}}-{{e.mis_numeros_telefonicos.numero_estudiantes}}</li>
+
+    {% endfor %}
+
+</ul>
+
+<hr>

@@ -45,3 +45,36 @@ def listadoEstudiantesDos(request):
     'numero_estudiantes': len(estudiantes),
     'mis_numeros_telefonicos': mis_numeros_telefonicos}
     return render(request, 'listadoEstudiantesDos.html', informacion_template)
+
+def listadoEstudiantesTres(request):
+    """
+    Listar los registros del modelo Estudiante,
+    obtenidos de la base de datos.
+    """
+    estudiantes = Estudiante.objects.all()
+    # en la variable tipo diccionario llamada informacion_template
+    # se agregará la información que estará disponible
+    # en el template
+    titulo = "Listado de estudiantes (Tres)"
+    informacion_template = {'estudiantes': estudiantes,
+    'numero_estudiantes': len(estudiantes), 'mititulo': titulo}
+    return render(request, 'listadoEstudiantes.html', informacion_template)
+
+def listadoEstudiantesCuatro(request):
+    """
+    Listar los registros del modelo Estudiante,
+    obtenidos de la base de datos.
+    """
+    estudiantes = Estudiante.objects.all()
+    mis_numeros_telefonicos = NumeroTelefonico.objects.all()
+    # en la variable tipo diccionario llamada informacion_template
+    # se agregará la información que estará disponible
+    # en el template
+    titulo = "Listado de Estudiantes y Teléfonos"
+    informacion_template = {
+        'estudiantes': estudiantes,
+        'numero_estudiantes': len(estudiantes),
+        'numeros_telefonicos': mis_numeros_telefonicos,
+        'mititulo': titulo
+    }
+    return render(request, 'telfonoEs.html', informacion_template)
